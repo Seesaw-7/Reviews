@@ -1,0 +1,15 @@
+
+
+.items {
+    column-count: 4;
+    /* Creates 4 columns */
+    column-gap: 20px;
+    /* Sets the gap between columns */
+}
+
+.items>div {
+    break-inside: avoid;
+    /* Prevents items from being split across columns */
+    margin-bottom: 20px;
+    /* Space between items */
+}
