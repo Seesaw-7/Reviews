@@ -4,14 +4,11 @@
 }
 
 #items {
-    display: flex;
     position: relative;
-    justify-self: center; 
     margin: auto auto;
 }
 
 .box {
-    /* float: left; */
     padding: 15px;
     width: 150px;
     word-wrap: break-word;

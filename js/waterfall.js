@@ -18,7 +18,8 @@ function imgLocation(parent, content) {
 
     var num = Math.floor(document.documentElement.clientWidth / imgWidth);
     console.log("num: " + num)
-    cparent.style.width = `${imgWidth * num}px`;
+    var actualNum = Math.min(num, allBoxes.length);
+    cparent.style.width = `${imgWidth * actualNum}px`;
 
     var BoxHeightArr = new Array(num).fill(0);
 
