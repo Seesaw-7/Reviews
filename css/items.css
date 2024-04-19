@@ -1,15 +1,37 @@
-
-
 .items {
-    column-count: 4;
-    /* Creates 4 columns */
-    column-gap: 20px;
-    /* Sets the gap between columns */
+    /* Masonry will override this width, but it's good to have a fallback */
+    width: 100%;
 }
 
-.items>div {
-    break-inside: avoid;
-    /* Prevents items from being split across columns */
-    margin-bottom: 20px;
-    /* Space between items */
+/* This is for Masonry to calculate each item's width */
+.items div {
+    width: 25%;
+    /* Each item is 25% of the container's width */
+    float: left;
+    /* Ensures the items flow in from the left */
+    box-sizing: border-box;
+    /* Includes padding and border in the element's width */
+    /* Add your existing styles for border, background, etc. */
 }
+
+/* Clearfix for floated items if needed */
+.items::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.items > div {
+    box-sizing: border-box;
+    padding: 15px;
+    margin-bottom: 20px; /* This controls the vertical space between items */
+}
+
+.items img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Keep the aspect ratio */
+    display: block; /* Prevent inline behaviors */
+    margin-bottom: 10px;
+}
+
+
