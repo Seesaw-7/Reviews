@@ -10,16 +10,16 @@
 
 .box {
     padding: 15px;
-    width: 150px;
+    width: 180px;
     word-wrap: break-word;
 }
 
 .box-img p {
-    font-size: medium;
+    font-size: smaller;
 }
 
 .box-img {
-    width: 150px;
+    width: 180px;
     padding: 5px;
     border: 1px solid #ccc;
     box-shadow: 0 0 5px #ccc;
