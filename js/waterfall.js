@@ -45,3 +45,44 @@ function imgLocation(parent, content) {
         }
     }
 }
+
+function loadMore(movieId) {
+    var moreText = document.getElementById("more-" + movieId);
+    var parentBox = moreText.closest('.box');
+    if (!parentBox) {
+        console.error('parentBox is null');
+        return;
+    }
+
+    var parentColumn = Math.floor(parentBox.offsetLeft / parentBox.offsetWidth);
+
+    if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+    }
+
+    var btn = document.getElementById("more-btn-" + movieId);
+    btn.parentNode.removeChild(btn);
+
+    updateColumn(parentColumn, parentBox.offsetWidth);
+}
+
+function updateColumn(columnIndex, columnWidth) {
+    var allBoxes = Array.from(document.getElementsByClassName('box'));
+    var columnStartX = columnIndex * columnWidth;
+
+    var columnBoxes = allBoxes.filter(box => Math.floor(box.offsetLeft) === columnStartX);
+    var newY = 0;
+
+    for (let box of columnBoxes) {
+        box.style.top = newY + 'px';
+        newY += box.offsetHeight;
+    }
+}
+
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            this.click();
+        }
+    });
+});
