@@ -12,12 +12,19 @@ truculenta-a {
     margin: 0;
 }
 
+h1 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
 #items {
     position: relative;
     margin: auto auto;
 }
 
 .box {
+    visibility: hidden;
     padding: 15px;
     width: 180px;
     word-wrap: break-word;
@@ -42,18 +49,25 @@ truculenta-a {
 }
 
 button {
-    padding: 10px 20px;
-    margin: 10px 0;
-    background-color: #007BFF;
+    display: block;
+    width: max-content;
+    padding: 5px 10px 5px 10px;
+    background-color: transparent;
     color: white;
-    border: none;
+    border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
+    margin: auto auto;
+    font-family: "Truculenta", sans-serif;
 }
 
 button:hover {
     background-color: transparent;
 }
 
+a {
+    color: white;
+    text-align: center;
 
+}
   

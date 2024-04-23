@@ -20,10 +20,12 @@ function imgLocation(parent, content) {
     console.log("num: " + num)
     var actualNum = Math.min(num, allBoxes.length);
     cparent.style.width = `${imgWidth * actualNum}px`;
+    cparent.style.visibility = 'visible';
 
     var BoxHeightArr = new Array(num).fill(0);
 
     for (var i = 0; i < allBoxes.length; i++) {
+        allBoxes[i].style.visibility = 'visible'; 
         if (i < num) {
             console.log("i: " + i);
             allBoxes[i].style.position = 'absolute';
